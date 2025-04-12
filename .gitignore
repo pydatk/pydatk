@@ -1,6 +1,7 @@
 # pydatk
 .vscode/
 packaging.md
+pydatkconfig.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
