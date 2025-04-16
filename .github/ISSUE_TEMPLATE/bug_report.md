@@ -24,11 +24,14 @@ code here
 ```
 
 **Data Sample**
-Include a small sample of data if relevant. 
+_Include a small sample of data if relevant._
+_IMPORTANT: Do not post confidential or copyrighted data or Personally Identifiable Information (PII)._
 
-__Do not post confidential or copyrighted data or Personally Identifiable Information (PII).__
+```
+data sample here
+```
 
 **Environment**
-pydatk version:
-Python version:
-OS:
+- pydatk version:
+- Python version:
+- OS:
