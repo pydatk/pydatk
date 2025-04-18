@@ -5,7 +5,10 @@ import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../src")
 
 # import pydatk
-import pydatk as datk
+from pydatk import dev as dtkdev
+import pydatk as dtk
 
 # test
-print(datk.dev.test_pkg('test pydatk'))
+print(dtkdev.test_pkg('test pydatk'))
+
+print(dtk.version)
