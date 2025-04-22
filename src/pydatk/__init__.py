@@ -1,44 +1,26 @@
-# use this for importing modules (see example import below)
-# do not include dev - it should be called separately so dev features
-# are not accessed accidentally
-# from pydatk.module import *
+# do not include __pydatk_dev - it should be called separately
+from pydatk import yaml
 
-# from pydatk import dev as dtkdev
-# import pydatk as dtk
 
-# TODO: fn for checking installed version against latest
-# Download (from MAIN): https://github.com/pydatk/pydatk/blob/main/pyproject.toml
-# Parse: https://docs.python.org/3/library/tomllib.html
-
-_versions = [
-    {
-        'version': '0.0.0',
-        'dt_utc': '2025-04-12',
-        'pypi': {
-            'dt_utc': '2025-04-12T06:53:03+0000',
-            'url': 'https://pypi.org/project/pydatk/0.0.0/'
+def __get_versions():
+    versions = (
+        {
+            'version': '0.0.0',
+            'dt_utc': '2025-04-12'
         },
-        'github': {
-            'dt_utc': '2025-04-18T02:53:00Z',
-            'url': 'https://github.com/pydatk/pydatk/releases/tag/0.0.0',
-            'is_prerelease': True
+        {
+            'version': '0.0.1-dev.1',
+            'dt_utc': '2025-04-22'
         }
-    },
-    {
-        'version': '0.0.1',
-        'dt_utc': 'TBC',
-        'pypi': {
-            'dt_utc': 'TBC',
-            'url': 'TBC'
-        },
-        'github': {
-            'dt_utc': 'TBC',
-            'url': 'TBC',
-            'is_prerelease': True
-        }
-    }
-]
+    )
+    return versions
 
-_version_int = len(_versions) - 1
+def __get_version_int():
+    versions = __get_versions()
+    version_int = len(versions) - 1
+    return version_int
 
-version = _versions[_version_int]['version']
+def get_version():
+    versions = __get_versions()
+    version_int = __get_version_int()
+    version = versions[version_int]['version']
