@@ -1,5 +1,5 @@
 # do not include __pydatk_dev - it should be called separately
-from pydatk import yaml
+from pydatk import new_module
 
 
 def __get_versions():
@@ -24,3 +24,4 @@ def get_version():
     versions = __get_versions()
     version_int = __get_version_int()
     version = versions[version_int]['version']
+    return version
