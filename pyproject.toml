@@ -1,13 +1,13 @@
 [project]
 name = "pydatk"
-version = "0.0.1-dev.1"
+version = "0.0.1-dev.2"
 authors = [
   { name="pydatk" },
 ]
 description = "pydatk"
 readme = "README.md"
 requires-python = ">=3.13"
-requires = ["pyyaml >= 6.0.2"]
+dependencies = ["pyyaml >= 6.0.2"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
