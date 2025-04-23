@@ -17,4 +17,8 @@ yaml_str = """
 deserial = __pydatk_dev.yaml_deserialize_str(yaml_str)
 print(deserial)
 
-print(__pydatk_dev.yaml_serialize(deserial))
+serial = __pydatk_dev.yaml_serialize(deserial)
+print(serial)
+
+serial = __pydatk_dev.yaml_serialize(deserial, start_separator=True, end_separator=True)
+print(serial)

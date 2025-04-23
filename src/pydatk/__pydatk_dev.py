@@ -66,13 +66,14 @@ def yaml_deserialize_file(file, non_dict='keep'):
     yaml_deserial = __yaml_non_dict(yaml_deserial, non_dict)
     return yaml_deserial
 
-def yaml_serialize(unserialized, file=None, non_dict='keep'):
+def yaml_serialize(unserialized, file=None, non_dict='keep', start_separator=False, end_separator=False):
     # serialize 'unserialized' data: single section or list (multiple sections)
     # will remove any list items that aren't a dict
     # If 'file' is provided, write serialized data to file then reload to check.
     # non_dict: 
     #   default 'keep': leave any non-dict values in list
     #   'strip': strip any non-dict values from list
+    # start/end_separator: If true, adds '---' to start/end of file
     if type(unserialized) is not list: unserialized = [unserialized] 
     if non_dict == 'strip':
         unserialized = [d for d in unserialized if type(d) is dict]       
@@ -80,11 +81,13 @@ def yaml_serialize(unserialized, file=None, non_dict='keep'):
         raise Exception('non_dict option not recognised')
     if file:
         with open(file, 'w', encoding='utf-8') as fh:
-            yaml_serial = yaml.safe_dump_all(unserialized, fh, indent=4, sort_keys=False)
+            yaml_serial = yaml.safe_dump_all(unserialized, fh, width=79, explicit_start=start_separator, sort_keys=False)
         yaml_deserial = yaml_deserialize_file(file)
     else:
-        yaml_serial = yaml.safe_dump_all(unserialized, indent=4, sort_keys=False)
+        yaml_serial = yaml.safe_dump_all(unserialized, width=79, explicit_start=start_separator, sort_keys=False)
         yaml_deserial = yaml_deserialize_str(yaml_serial)
     assert unserialized == yaml_deserial, 'check failed'
+    if end_separator == True and yaml_serial.strip()[-3:] != '---':
+        yaml_serial = yaml_serial.strip() + '\n---\n'
     return yaml_serial
     
