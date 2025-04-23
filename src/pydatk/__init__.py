@@ -11,6 +11,10 @@ def __get_versions():
         {
             'version': '0.0.1-dev.1',
             'dt_utc': '2025-04-22'
+        },
+        {
+            'version': '0.0.1-dev.2',
+            'dt_utc': '2025-04-23'
         }
     )
     return versions
