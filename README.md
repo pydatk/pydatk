@@ -2,8 +2,6 @@
 
 ## Intro
 
-A Python package for doing stuff with data.
-
 In development.
 
 Feedback, questions, suggestions welcome - please post [here](https://github.com/pydatk/pydatk/discussions).
