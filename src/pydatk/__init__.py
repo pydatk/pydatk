@@ -6,4 +6,5 @@ data pipelines: Extracting, validating, loading and transforming data.
 For more information, visit https://www.pydatk.com
 """
 
+from pydatk import config
 from pydatk import finance

@@ -1,5 +1,7 @@
 # *** custom ***
 
+*.ini
+conf.txt
 .vscode/
 
 # *** github default below this line ***
