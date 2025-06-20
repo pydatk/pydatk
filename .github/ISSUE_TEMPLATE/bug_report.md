@@ -1,6 +1,9 @@
 ---
 name: Issue
 about: Report an issue with pydatk
+title: ''
+labels: ''
+assignees: ''
 ---
 
 **Describe the issue**
